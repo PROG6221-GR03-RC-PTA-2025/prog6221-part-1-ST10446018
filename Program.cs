@@ -42,3 +42,46 @@ namespace CyberChatBot
         }
     }
 }
+static void StartChatbotConversation()
+{
+    bool keepChatting = true;
+
+    while (keepChatting)
+    {
+        DisplayMainMenu();
+        string userInput = Console.ReadLine().ToLower().Trim();
+
+        switch (userInput)
+        {
+            case "1":
+                DiscussPasswordSafety();
+                break;
+            case "2":
+                DiscussPhishing();
+                break;
+            case "3":
+                DiscussSafeBrowsing();
+                break;
+            case "exit":
+                keepChatting = false;
+                break;
+            default:
+                Console.WriteLine("Invalid choice. Please select a valid option.");
+                break;
+        }
+    }
+}
+
+static void DisplayMainMenu()
+{
+    Console.WriteLine("1. Password Safety");
+    Console.WriteLine("2. Phishing");
+    Console.WriteLine("3. Safe Browsing");
+    Console.WriteLine("Type 'exit' to quit.");
+    Console.Write("> ");
+}
+
+static void DiscussPasswordSafety()
+{
+    string message = @"
+
