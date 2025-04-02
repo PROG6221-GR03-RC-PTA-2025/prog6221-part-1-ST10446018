@@ -84,4 +84,50 @@ static void DisplayMainMenu()
 static void DiscussPasswordSafety()
 {
     string message = @"
+    static string GetUserName()
+{
+    string name;
+    do
+    {
+        Console.WriteLine("Hello! What is your name?");
+        name = Console.ReadLine().Trim();
+        if (string.IsNullOrEmpty(name))
+        {
+            Console.WriteLine("Please enter a valid name!");
+        }
+    } while (string.IsNullOrEmpty(name));
+
+    return name;
+}
+
+    static void StartChatbotConversation()
+{
+    bool keepChatting = true;
+
+    while (keepChatting)
+    {
+        DisplayMainMenu();
+        string userInput = Console.ReadLine().ToLower().Trim();
+
+        switch (userInput)
+        {
+            case "1":
+                DiscussPasswordSafety();
+                break;
+            case "2":
+                DiscussPhishing();
+                break;
+            case "3":
+                DiscussSafeBrowsing();
+                break;
+            case "exit":
+                keepChatting = false;
+                break;
+            default:
+                Console.WriteLine("Invalid input. Please enter '1', '2', or '3'.");
+                break;
+        }
+    }
+}
+
 
