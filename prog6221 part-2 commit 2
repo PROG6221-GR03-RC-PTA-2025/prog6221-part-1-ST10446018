@@ -1,0 +1,21 @@
+static bool RecognizeKeyword(string input)
+{
+    bool matched = false;
+
+    foreach (var keyword in keywordTips.Keys)
+    {
+        if (input.Contains(keyword))
+        {
+            Console.WriteLine(keywordTips[keyword]);
+            if (string.IsNullOrEmpty(userInterest))
+            {
+                userInterest = keyword;
+                Console.WriteLine($"Thanks for your interest in {keyword}. I’ll remember that!");
+            }
+            else
+            {
+                Console.WriteLine($"As someone interested in {userInterest}, here's a related tip.");
+            }
+            matched = true;
+        }
+    }
