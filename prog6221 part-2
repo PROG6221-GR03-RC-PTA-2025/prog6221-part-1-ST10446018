@@ -1,0 +1,14 @@
+static Dictionary<string, string> keywordTips = new Dictionary<string, string>()
+{
+    { "password", "Make sure to use strong, unique passwords for each account. Avoid using personal details in your passwords." },
+    { "scam", "Be careful with unknown messages or links. Scammers often try to trick you into revealing your personal info." },
+    { "privacy", "Always check your app and website privacy settings. Only share what's necessary." }
+};
+
+static List<string> phishingTips = new List<string>()
+{
+    "Be cautious of emails asking for personal information.",
+    "Don’t click on suspicious links, even if they look official.",
+    "Always double-check the sender’s email address.",
+    "Never download attachments from unknown senders."
+};
